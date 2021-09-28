@@ -1,3 +1,4 @@
+```bash
 .
 ├── dynamic_programming
 │   ├── coin_combinations_1.cpp
@@ -27,3 +28,4 @@
 └── README.md
 
 2 directories, 24 files
+```
