@@ -41,10 +41,18 @@ pair<int,int> next_position(int cx, int cy, char dir) {
 	return {-1, -1};
 }
 
+int gans = 0;
+
 int go(int cx, int cy, int id) {
 	if (cx < 0 || cx > 7 || cy < 0 || cy > 7) return 0;
 	if (vis[cx][cy]) return 0;
-	if (id == N) return cx == 7 && cy == 7;
+	if (id == N) {
+		if (cx == 7 && cy == 7) {
+			cout << "ans = " << ++gans << endl;
+			return 1;
+		}
+		return 0;
+	}
 	int ans = 0;
 	if (S[id] == '?') { 
 		F0R (j,4) {
