@@ -4,7 +4,6 @@
 │   ├── coin_combinations_1.cpp
 │   ├── coin_combinations_2.cpp
 │   ├── dice-combinations.cpp
-│   ├── in
 │   ├── minimizing_coins.cpp
 │   └── removing_digits.cpp
 ├── introductory_problems
@@ -15,7 +14,6 @@
 │   ├── gray_code.cpp
 │   ├── grid_paths
 │   ├── grid_paths.cpp
-│   ├── in
 │   ├── increasing_array.cpp
 │   ├── missing_number.cpp
 │   ├── palindrome_reorder.cpp
@@ -27,5 +25,5 @@
 │   └── weird_algorithm.cpp
 └── README.md
 
-2 directories, 24 files
+2 directories, 22 files
 ```
