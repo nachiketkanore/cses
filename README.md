@@ -1,18 +1,24 @@
 ```bash
 .
 ├── dynamic_programming
+│   ├── book_shop.cpp
 │   ├── coin_combinations_1.cpp
 │   ├── coin_combinations_2.cpp
+│   ├── counting_numbers.cpp
 │   ├── dice-combinations.cpp
+│   ├── grid_paths.cpp
+│   ├── increasing_subsequence.cpp
 │   ├── minimizing_coins.cpp
-│   └── removing_digits.cpp
+│   ├── money_sums.cpp
+│   ├── projects.cpp
+│   ├── removing_digits.cpp
+│   └── two_sets_2.cpp
 ├── introductory_problems
 │   ├── apple_division.cpp
 │   ├── bit_strings.cpp
 │   ├── coin_piles.cpp
 │   ├── creating_strings.cpp
 │   ├── gray_code.cpp
-│   ├── grid_paths
 │   ├── grid_paths.cpp
 │   ├── increasing_array.cpp
 │   ├── missing_number.cpp
@@ -25,5 +31,5 @@
 │   └── weird_algorithm.cpp
 └── README.md
 
-2 directories, 22 files
+2 directories, 28 files
 ```
