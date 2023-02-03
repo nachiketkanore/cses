@@ -11,7 +11,6 @@ using namespace std;
 #define see(...) ;
 #endif
 
-#define int int64_t
 #define sz(x) (int)(x.size())
 #define ALL(x) (x).begin(), (x).end()
 #define F0R(i, R) for (int i = (0); i < (R); ++i)
@@ -19,51 +18,43 @@ using namespace std;
 
 string S, T;
 int N, M;
+int dp[5001][5001];
 
-int go(int i, int j, string s, string t, int cost) {
+int go(int i, int j) {
 	if (i == N) {
-		// TODO
 		// T is still not complete
 		// option 1: append remaining chars to S
 		// option 2: delete remaining chars from T
 		// both require same number of operations
-		cost += M - j;
-		if (cost == 1) {
-			see(s);
-			see(t);
-		}
 		return M - j;
 	}
 	if (j == M) {
-		// TODO
 		// same procedure as above
-		cost += N - i;
-		if (cost == 1) {
-			see(s);
-			see(t);
-		}
 		return N - i;
 	}
-	int ans = 1e9;
+	int& ans = dp[i][j];
+	if (~ans)
+		return ans;
+	ans = 1e9;
 
 	if (S[i] == T[j]) {
-		ans = min(ans, go(i + 1, j + 1, s + S[i], t + T[j], cost));
+		ans = min(ans, go(i + 1, j + 1));
 	}
 	{
+		// Handling all cases and ignoring repetitive calls
 		// replace one of them to same
-		ans = min(ans, 1 + go(i + 1, j + 1, s + T[j], t + T[j], cost + 1));
+		ans = min(ans, 1 + go(i + 1, j + 1));
 		// insert T[j] at i
-		ans = min(ans, 1 + go(i, j + 1, s + T[j], t + T[j], cost + 1));
+		ans = min(ans, 1 + go(i, j + 1));
 		// insert S[i] at j
-		ans = min(ans, 1 + go(i + 1, j, s + S[i], t + S[i], cost + 1));
-		// remove both
-		ans = min(ans, 2 + go(i + 1, j + 1, s, t, cost + 2));
-		// remove S[i]
-		ans = min(ans, 1 + go(i + 1, j, s, t, cost + 1));
-		// remove T[j]
-		ans = min(ans, 1 + go(i, j + 1, s, t, cost + 1));
+		ans = min(ans, 1 + go(i + 1, j));
+		// remove both -- can also be ignore? Yes, great!
+		// ans = min(ans, 2 + go(i + 1, j + 1));
+		// remove S[i] -- same call as above, hence ignoring
+		// ans = min(ans, 1 + go(i + 1, j));
+		// remove T[j] -- same call as above, hence ignoring
+		// ans = min(ans, 1 + go(i, j + 1));
 	}
-	// see(i, j, ans);
 	return ans;
 }
 
@@ -71,11 +62,14 @@ int32_t main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
+	memset(dp, -1, sizeof(dp));
 	cin >> S >> T;
 	N = S.size(), M = T.size();
 
 	// writing a top-down solution first
-	cout << go(0, 0, "", "", 0) << '\n';
+	// -- it works, so not going to write iterative
+	// :)
+	cout << go(0, 0);
 
 	return 0;
 }
