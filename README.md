@@ -17,6 +17,7 @@
 │   ├── money_sums.cpp
 │   ├── projects.cpp
 │   ├── rectangle_cutting.cpp
+│   ├── removal-game.cpp
 │   ├── removing_digits.cpp
 │   └── two_sets_2.cpp
 ├── introductory_problems
@@ -41,5 +42,5 @@
     ├── post
     └── pre
 
-4 directories, 36 files
+4 directories, 37 files
 ```
